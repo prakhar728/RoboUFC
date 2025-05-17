@@ -60,12 +60,6 @@ export default function Home() {
             <button onClick={() => scrollToSection("about")} className="hover:text-cyan-400 transition-colors">
               About
             </button>
-            <button onClick={() => scrollToSection("tokenomics")} className="hover:text-cyan-400 transition-colors">
-              Tokenomics
-            </button>
-            <button onClick={() => scrollToSection("roadmap")} className="hover:text-cyan-400 transition-colors">
-              Roadmap
-            </button>
             <button onClick={() => scrollToSection("fighters")} className="hover:text-cyan-400 transition-colors">
               Fighters
             </button>
@@ -99,12 +93,6 @@ export default function Home() {
           <div className="flex flex-col p-4 gap-4">
             <button onClick={() => scrollToSection("about")} className="py-3 px-4 hover:bg-gray-800 rounded-md">
               About
-            </button>
-            <button onClick={() => scrollToSection("tokenomics")} className="py-3 px-4 hover:bg-gray-800 rounded-md">
-              Tokenomics
-            </button>
-            <button onClick={() => scrollToSection("roadmap")} className="py-3 px-4 hover:bg-gray-800 rounded-md">
-              Roadmap
             </button>
             <button onClick={() => scrollToSection("fighters")} className="py-3 px-4 hover:bg-gray-800 rounded-md">
               Fighters
@@ -165,7 +153,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection("tokenomics")}
+                onClick={() => scrollToSection("fighters")}
                 className="px-8 py-3 rounded-full bg-gradient-to-r from-pink-600 to-purple-600 font-bold text-lg flex items-center justify-center gap-2"
               >
                 Join the Fight <Zap size={18} />
@@ -264,157 +252,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tokenomics Section */}
-      <section id="tokenomics" className="py-20 md:py-32 bg-gray-800 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,41,148,0.1),transparent_70%)]"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection>
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-cyan-500">
-                Tokenomics
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                  <TokenomicsPieChart />
-                </div>
-
-                <div className="space-y-6">
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 20 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    className="flex items-center gap-4 p-4 bg-gray-700/50 rounded-xl border border-gray-600"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold">50%</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">Liquidity</h3>
-                      <p className="text-gray-300">Locked for 6 months minimum</p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 20 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    className="flex items-center gap-4 p-4 bg-gray-700/50 rounded-xl border border-gray-600"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold">30%</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">Marketing</h3>
-                      <p className="text-gray-300">Influencers, ads, and promotions</p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 20 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    className="flex items-center gap-4 p-4 bg-gray-700/50 rounded-xl border border-gray-600"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold">10%</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">Development</h3>
-                      <p className="text-gray-300">Building the $RUMBLE ecosystem</p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: 20 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    className="flex items-center gap-4 p-4 bg-gray-700/50 rounded-xl border border-gray-600"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-lime-500 flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold">10%</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">Community</h3>
-                      <p className="text-gray-300">Airdrops, rewards, and giveaways</p>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Roadmap Section */}
-      <section id="roadmap" className="py-20 md:py-32 bg-gray-900 relative">
-        <div className="container mx-auto px-4">
-          <AnimatedSection>
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-cyan-500">
-                Roadmap
-              </h2>
-
-              <div className="relative">
-                {/* Timeline Line */}
-                <div className="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500 via-purple-500 to-cyan-500"></div>
-
-                {/* Q2 2023 */}
-                <RoadmapItem
-                  quarter="Q2 2023"
-                  title="Launch"
-                  items={["Token launch on DEX", "Website and socials", "Community building", "Initial marketing push"]}
-                  isLeft={true}
-                />
-
-                {/* Q3 2023 */}
-                <RoadmapItem
-                  quarter="Q3 2023"
-                  title="NFT Robot Fighter Drop"
-                  items={[
-                    "Limited edition NFT collection",
-                    "Holder benefits and utilities",
-                    "CEX listings",
-                    "Partnerships with influencers",
-                  ]}
-                  isLeft={false}
-                />
-
-                {/* Q4 2023 */}
-                <RoadmapItem
-                  quarter="Q4 2023"
-                  title="Staking Arena"
-                  items={[
-                    "Staking platform launch",
-                    "Yield farming opportunities",
-                    "Governance implementation",
-                    "Community events and tournaments",
-                  ]}
-                  isLeft={true}
-                />
-
-                {/* Q1 2024 */}
-                <RoadmapItem
-                  quarter="Q1 2024"
-                  title="IRL Robot Battle Collab"
-                  items={[
-                    "Partnership with robot fighting league",
-                    "Sponsored battles and events",
-                    "Metaverse integration",
-                    "Expanded ecosystem development",
-                  ]}
-                  isLeft={false}
-                />
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* Robot Fighter Cards */}
       <section id="fighters" className="py-20 md:py-32 bg-gray-800 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(236,72,153,0.1),transparent_70%)]"></div>
@@ -467,33 +304,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Twitter Feed */}
-      <section className="py-20 md:py-32 bg-gray-900 relative">
-        <div className="container mx-auto px-4">
-          <AnimatedSection>
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-cyan-500">
-                What Degens Are Saying
-              </h2>
-
-              <div className="bg-gray-800/50 rounded-xl border border-gray-700 p-4 md:p-6">
-                <div className="aspect-[16/9] w-full">
-                  <iframe
-                    className="w-full h-full rounded-lg border border-gray-700"
-                    src="https://twitframe.com/show?url=https://twitter.com/elonmusk/status/1649191971830554625"
-                    style={{ border: "none", overflow: "hidden" }}
-                    scrolling="no"
-                    allowFullScreen={true}
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* Join the Community */}
-      <section id="community" className="py-20 md:py-32 bg-gray-800 relative">
+      <section id="community" className="py-20 md:py-32 bg-gray-900 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15),transparent_70%)]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection>
@@ -689,144 +501,6 @@ function GlitchBackground() {
             }}
           ></motion.div>
         ))}
-      </div>
-    </div>
-  )
-}
-
-// Tokenomics Pie Chart Component
-function TokenomicsPieChart() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8 }}
-      className="relative w-full max-w-[300px] mx-auto aspect-square"
-    >
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        {/* Pink - 50% Liquidity */}
-        <motion.circle
-          cx="50"
-          cy="50"
-          r="40"
-          fill="transparent"
-          stroke="#ec4899"
-          strokeWidth="20"
-          strokeDasharray="251.2"
-          strokeDashoffset="125.6"
-          initial={{ strokeDashoffset: 251.2 }}
-          animate={{ strokeDashoffset: 125.6 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        />
-
-        {/* Purple - 30% Marketing */}
-        <motion.circle
-          cx="50"
-          cy="50"
-          r="40"
-          fill="transparent"
-          stroke="#a855f7"
-          strokeWidth="20"
-          strokeDasharray="251.2"
-          strokeDashoffset="188.4"
-          initial={{ strokeDashoffset: 251.2 }}
-          animate={{ strokeDashoffset: 188.4 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          transform="rotate(-180 50 50)"
-        />
-
-        {/* Cyan - 10% Development */}
-        <motion.circle
-          cx="50"
-          cy="50"
-          r="40"
-          fill="transparent"
-          stroke="#22d3ee"
-          strokeWidth="20"
-          strokeDasharray="251.2"
-          strokeDashoffset="226.08"
-          initial={{ strokeDashoffset: 251.2 }}
-          animate={{ strokeDashoffset: 226.08 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          transform="rotate(-108 50 50)"
-        />
-
-        {/* Lime - 10% Community */}
-        <motion.circle
-          cx="50"
-          cy="50"
-          r="40"
-          fill="transparent"
-          stroke="#84cc16"
-          strokeWidth="20"
-          strokeDasharray="251.2"
-          strokeDashoffset="226.08"
-          initial={{ strokeDashoffset: 251.2 }}
-          animate={{ strokeDashoffset: 226.08 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          transform="rotate(-72 50 50)"
-        />
-
-        {/* Center Circle */}
-        <circle cx="50" cy="50" r="30" fill="#1f2937" />
-
-        {/* Text */}
-        <text x="50" y="45" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">
-          $RUMBLE
-        </text>
-        <text x="50" y="55" textAnchor="middle" fill="#9ca3af" fontSize="6">
-          TOKENOMICS
-        </text>
-      </svg>
-    </motion.div>
-  )
-}
-
-// Roadmap Item Component
-function RoadmapItem({
-  quarter,
-  title,
-  items,
-  isLeft,
-}: {
-  quarter: string
-  title: string
-  items: string[]
-  isLeft: boolean
-}) {
-  return (
-    <div className={`flex flex-col md:flex-row items-center mb-16 ${isLeft ? "md:flex-row-reverse" : ""}`}>
-      <div className={`md:w-1/2 ${isLeft ? "md:text-right md:pr-16" : "md:text-left md:pl-16"}`}>
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, x: isLeft ? 50 : -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          transition={{ duration: 0.6 }}
-          className={`p-6 bg-gray-800/80 rounded-xl border border-gray-700 ${isLeft ? "ml-12 md:ml-0" : "ml-12 md:ml-0"}`}
-        >
-          <div className="text-sm font-medium text-pink-400 mb-2">{quarter}</div>
-          <h3 className="text-xl font-bold mb-4">{title}</h3>
-          <ul className={`space-y-2 ${isLeft ? "md:ml-auto" : ""}`}>
-            {items.map((item, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <span className="text-cyan-400 mt-1">•</span>
-                <span className="text-gray-300">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </div>
-
-      <div className="md:w-1/2 flex justify-center relative">
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, scale: 0.5 },
-            visible: { opacity: 1, scale: 1 },
-          }}
-          transition={{ duration: 0.4 }}
-          className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 z-10 absolute left-0 md:left-1/2 transform md:translate-x-[-50%] mt-8 md:mt-0"
-        ></motion.div>
       </div>
     </div>
   )
